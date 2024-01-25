@@ -1,0 +1,22 @@
+---
+- name: A simple playbook file
+  hosts: thename
+  vars: 
+      - semi2: 26
+  tasks:
+    
+    - name: Print a sample message
+      debug: 
+        msg: Hello World. Welcome to Ansible playbooks!
+    
+
+    - name: using variables
+      debug: 
+        msg: show semi's age. semi age is {{ semi }}
+    
+
+    - name: variable2
+      debug: 
+        msg: show semi's age. semi age is {{ semi2 }}
+      when: 
+        - "{{ semi2 }}" == "26"
